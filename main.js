@@ -1,4 +1,4 @@
-import * as THREE from './libraries/three.module.js';
+import * as THREE from './libs/three.module.js';
 
 // Сцена, камера, рендер
 const scene = new THREE.Scene();
@@ -32,5 +32,6 @@ animate();
 window.addEventListener('beforeunload', () => {
   localStorage.setItem('playerData', JSON.stringify({ cubeRotation: cube.rotation.y }));
 });
+
 
 
