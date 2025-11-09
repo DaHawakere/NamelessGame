@@ -1,4 +1,4 @@
-import * as THREE from 'https://raw.githubusercontent.com/DaHawakere/NamelessGame/refs/heads/main/libraries/three.module.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.164/build/three.module.js';
 
 // Сцена, камера, рендер
 const scene = new THREE.Scene();
@@ -42,5 +42,6 @@ if (saved) {
   cube.rotation.y = saved._y || 0;
   cube.rotation.z = saved._z || 0;
 }
+
 
 
