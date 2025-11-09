@@ -1,4 +1,4 @@
-import * as THREE from './libs/three.module.js';
+import * as THREE from './libraries/three.module.js';
 
 // Сцена, камера, рендер
 const scene = new THREE.Scene();
@@ -42,3 +42,4 @@ if (saved) {
   cube.rotation.y = saved._y || 0;
   cube.rotation.z = saved._z || 0;
 }
+
