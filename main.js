@@ -1,7 +1,7 @@
 // Импорт Three.js и контролов через CDN
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.164/build/three.module.js';
 import { PointerLockControls } from '
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.164/build/three.module.js';
+import * as three from 'https://cdn.jsdelivr.net/npm/three@0.164/build/three.module.js';
   import {
 	Euler,
 	EventDispatcher,
