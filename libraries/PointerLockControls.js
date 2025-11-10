@@ -2,7 +2,7 @@ import {
 	Euler,
 	EventDispatcher,
 	Vector3
-} from 'THREE';
+} from 'https://raw.githubusercontent.com/DaHawakere/NamelessGame/refs/heads/main/libraries/three.module.js';
 
 const _euler = new Euler( 0, 0, 0, 'YXZ' );
 const _vector = new Vector3();
