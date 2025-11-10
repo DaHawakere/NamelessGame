@@ -1,6 +1,5 @@
 const canvas = document.getElementById("renderCanvas");
 const engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });
-
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 const fpsCounter = document.getElementById("fpsCounter");
 
@@ -19,7 +18,7 @@ ground.physicsImpostor = new BABYLON.PhysicsImpostor(
     ground, BABYLON.PhysicsImpostor.BoxImpostor, {mass: 0, restitution: 0.1}, scene
 );
 
-// Герой
+// Герой (прозрачный цилиндр)
 const hero = BABYLON.MeshBuilder.CreateCylinder("hero", {diameter: 1, height: 2}, scene);
 hero.position.y = 1;
 hero.isVisible = false;
@@ -33,7 +32,7 @@ const camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 1.5, -5),
 camera.parent = hero;
 camera.attachControl(canvas, true);
 
-// Управление
+// Управление клавишами
 const inputMap = {};
 scene.actionManager = new BABYLON.ActionManager(scene);
 scene.actionManager.registerAction(
@@ -50,7 +49,7 @@ scene.actionManager.registerAction(
 const speed = 0.1;
 const jumpForce = 5;
 
-// Мобильный джойстик
+// Джойстик для мобильных
 let leftJoystick = null;
 if (isMobile) {
     leftJoystick = new BABYLON.VirtualJoystick(true);
@@ -90,7 +89,7 @@ scene.onBeforeRenderObservable.add(() => {
 
     hero.moveWithCollisions(move);
 
-    // Обновление FPS
+    // FPS
     fpsCounter.textContent = "FPS: " + Math.round(engine.getFps());
 });
 
