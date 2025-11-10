@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <link rel="icon" href="icon.ico" type="image/x-icon">
-  <meta charset="UTF-8">
-  <title>Nameless Game</title>
-  <style>
-    html, body { margin: 0; overflow: hidden; height: 100%; }
-    canvas { width: 100%; height: 100%; display: block; }
-  </style>
-  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <meta charset="UTF-8">
+    <title>NamelessGame</title>
+
+    <!-- Roboto font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Cannon.js -->
+    <script src="https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"></script>
+
+    <!-- Babylon.js -->
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+
+    <style>
+        html, body { margin: 0; padding: 0; overflow: hidden; height: 100%; font-family: 'Roboto', sans-serif; }
+        #renderCanvas { width: 100%; height: 100%; display: block; }
+
+        #fpsCounter {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #00ff00;
+            font-size: 16px;
+            background: rgba(0,0,0,0.5);
+            padding: 4px 8px;
+            border-radius: 4px;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body>
-  <canvas id="renderCanvas"></canvas>
-  <script type="module" src="index.js"></script>
+    <canvas id="renderCanvas"></canvas>
+    <div id="fpsCounter">FPS: 0</div>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
-
-
