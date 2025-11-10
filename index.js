@@ -12,13 +12,20 @@ const createScene = () => {
     camera.setTarget(BABYLON.Vector3.Zero());
 
     if (!isMobile) {
-        camera.attachControl(canvas, true); // ПК: мышь и WASD
+        // ПК: мышь + WASD
+        camera.attachControl(canvas, true);
+        camera.keysUp.push(87);    // W
+        camera.keysDown.push(83);  // S
+        camera.keysLeft.push(65);  // A
+        camera.keysRight.push(68); // D
     } else {
-        camera.attachControl(canvas, true); // Мобила: свайпы сами крутят камеру
+        // Мобила: свайпы для поворота
+        camera.attachControl(canvas, true);
 
-        // Виртуальный джойстик слева для движения
-        const joystick = new BABYLON.VirtualJoystick(true);
-        joystick.setJoystickSensibility(0.15); // чувствительность
+        // Джойстик слева для движения
+        const leftJoystick = new BABYLON.VirtualJoystick(true);
+        leftJoystick.setJoystickSensibility(0.15); // чувствительность
+        camera.inputs.addVirtualJoystick(leftJoystick);
     }
 
     // Свет
@@ -31,6 +38,5 @@ const createScene = () => {
 };
 
 const scene = createScene();
-
 engine.runRenderLoop(() => scene.render());
 window.addEventListener("resize", () => engine.resize());
